@@ -2,8 +2,8 @@
 
 $(document).ready(function(){
     $("button").click(function(){
-        $.get("1.txt", function(data, status){
-            alert("Data: " + data + "\nStatus: " + status);
+        $.get("ajax_info.txt", function(data, status){
+$("#demo").html("<b>" + data + "<b>");
         });
     });
 });
