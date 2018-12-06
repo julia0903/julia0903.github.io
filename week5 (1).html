@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+		td.mole_cell { width: 230px; height: 230px; }
+		img { width: 220px; height: 200px; opacity: 0; transition: transform 0.2s 0s; transform: scale(0.1)}
+		img.show { opacity: 1; transform: scale(1);}
+	</style>
+
+
+	<script> 
+		function hide(num) {
+		var img = document.getElementById("mole"+num);
+			img.setAttribute("class", "");
+		}
+
+		function show(num) {
+			var img = document.getElementById("mole"+num);
+			img.setAttribute("class", "show")
+		}
+
+		function showLoop() {
+			setTimeout(function(){
+				var num = Math.floor(Math.random() * 9) + 1;
+				show(num);
+				showLoop();
+			}, Math.random() * 1000);
+		}
+
+		showLoop();
+
+	</script>
+
+</head>
+<body>
+	<table border=1>
+		<tr>
+			<td class="mole_cell"><img id = "mole1" onclick="hide(1)" src="mole.jpg"></td>
+			<td class="mole_cell"><img id = "mole2" onclick="hide(2)" src="mole.jpg"></td>
+			<td class="mole_cell"><img id = "mole3" onclick="hide(3)" src="mole.jpg"></td>
+		</tr>
+		<tr>
+			<td class="mole_cell"><img id = "mole4" onclick="hide(4)" src="mole.jpg"></td>
+			<td class="mole_cell"><img id = "mole5" onclick="hide(5)" src="mole.jpg"></td>
+			<td class="mole_cell"><img id = "mole6" onclick="hide(6)" src="mole.jpg"></td>
+		</tr>
+		<tr>
+			<td class="mole_cell"><img id = "mole7" onclick="hide(7)" src="mole.jpg"></td>
+			<td class="mole_cell"><img id = "mole8" onclick="hide(8)" src="mole.jpg"></td>
+			<td class="mole_cell"><img id = "mole9" onclick="hide(9)" src="mole.jpg"></td>
+		</tr>
+	</table>
+</body>
+</html>
